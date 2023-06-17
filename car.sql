@@ -3,7 +3,7 @@ CREATE DATABASE car_warehouse;
 
 -- Create cars table 
 CREATE TABLE IF NOT EXISTS cars (
-    id BINARY(16) PRIMARY KEY DEFAULT (UUID_TO_BIN(UUID())),
+	id CHAR(36) PRIMARY KEY DEFAULT (UUID()),
     model VARCHAR(100) NOT NULL,
     color VARCHAR(50) NOT NULL,
     quantity INT NOT NULL
