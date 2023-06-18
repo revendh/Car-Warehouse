@@ -9,6 +9,7 @@ const PORT = 8080 || process.env.PORT;
 
 dotenv.config({ path: `${__dirname}/.env` });
 
+app.use(express.json());
 app.use('/api/v1/cars', carsRouter);
 
 sequelize
