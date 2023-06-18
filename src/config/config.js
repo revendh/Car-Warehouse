@@ -1,8 +1,11 @@
+const dotenv = require('dotenv');
+dotenv.config({ path: `${__dirname}/../.env` });
+
 module.exports = {
-  DB: {
-    DB_HOST: 'localhost',
-    DB: 'cars_warehouse',
-    DB_USERNAME: 'root',
-    DB_PASSWORD: '123456789',
+  database: {
+    host: 'localhost',
+    name: 'cars_warehouse',
+    username: 'cars_warehouse',
+    password: '123456789',
   },
 };
