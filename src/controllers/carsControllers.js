@@ -1,4 +1,5 @@
 const asyncHandler = require('express-async-handler');
+const { validationResult } = require('express-validator');
 const Car = require('../models/carModel');
 
 const isNotCar = (car) => {
@@ -11,15 +12,6 @@ const isNotCar = (car) => {
 };
 
 exports.getCars = async (req, res, next) => {
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({
-      status: 'error',
-      msg: 'Input validation error',
-      errors: errors.array(),
-    });
-  }
-
   const cars = await Car.findAll();
 
   res.status(200).json({
@@ -53,6 +45,14 @@ exports.getCar = asyncHandler(async (req, res, next) => {
 exports.createCar = asyncHandler(async (req, res, next) => {
   const { model, color, quantity } = req.body;
 
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({
+      status: 'error',
+      msg: 'Input validation error',
+      errors: errors.array(),
+    });
+  }
   const newCar = await Car.create({ model, color, quantity });
 
   res.status(201).json({

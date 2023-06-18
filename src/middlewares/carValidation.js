@@ -1,13 +1,6 @@
-const Joi = require('joi');
 const { body } = require('express-validator');
 
-exports.carValidationSchema = Joi.object({
-  model: Joi.string().required(),
-  color: Joi.string().required(),
-  quantity: Joi.number().required(),
-});
-
-exports.createCarValdiationInput = [
+exports.createCarValidationInput = [
   body('model').trim().notEmpty().withMessage('Car model is required'),
   body('color').trim().notEmpty().withMessage('Car color is required'),
   body('quantity')
