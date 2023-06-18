@@ -7,7 +7,15 @@ const {
   updateCar,
 } = require('../controllers/carsControllers');
 
-router.route('/').get(getCars).post(createCar);
+const {
+  carValidationSchema,
+  createCarValdiationInput,
+} = require('../middlewares/carValidation');
+
+router
+  .route('/')
+  .get(getCars)
+  .post(carValidationSchema, createCarValdiationInput, createCar);
 router.route('/:id').get(getCar).patch(updateCar).delete(deleteCar);
 
 module.exports = router;
