@@ -44,6 +44,14 @@ To run the Car Warehouse Management System locally, follow these steps:
 
 4. Set up the database:
    - Create a MySQL database and update the database configuration in the .env file.
+   - Here's an example of the .env file:
+     ```
+     DB_HOST=localhost
+     DB_PORT=3306
+     DB_USER=myusername
+     DB_PASSWORD=mypassword
+     DB=mydatabase-name
+     ```
 5. Start the application:
    ```shell
    npm start
@@ -78,10 +86,12 @@ The Car Warehouse Management System can be deployed using Heroku. Follow these s
 4. Create a new Heroku app:
 
    ```shell
-   heroku create your-app-name
+   heroku create car-warehouse
    ```
 
-5. Set up the MySQL database on Heroku using addons or an external service. Update the database configuration in the .env file with the Heroku database credentials.
+5. Set up the MySQL database on Heroku using addons or an external service.
+
+   - Update the database configuration in the .env file with the Heroku database credentials.
 
 6. Deploy the application to Heroku:
 
