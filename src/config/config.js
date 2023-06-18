@@ -3,9 +3,9 @@ dotenv.config({ path: `${__dirname}/../.env` });
 
 module.exports = {
   database: {
-    host: 'localhost',
-    name: 'cars_warehouse',
-    username: 'cars_warehouse',
-    password: '123456789',
+    host: process.env.DB_HOST,
+    name: process.env.DB,
+    username: process.env.DB_USERNAME,
+    password: process.env.DB_PASSWORD,
   },
 };
