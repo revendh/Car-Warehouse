@@ -5,7 +5,7 @@ const carsRouter = require('./routes/carsRouter');
 const sequelize = require('./db');
 
 const app = express();
-const PORT = 3000 || process.env.PORT;
+const PORT = 8080 || process.env.PORT;
 
 dotenv.config({ path: `${__dirname}/.env` });
 
