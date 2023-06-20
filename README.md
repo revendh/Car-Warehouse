@@ -28,7 +28,7 @@ To run the Car Warehouse Management System locally, follow these steps:
 
 1. Clone the repository:
    ```shell
-   git clone https://github.com/your-username/car-warehouse-management.git
+   git clone https://github.com/MostafaMGomaa/Car-Warehouse.git
    ```
 2. Navigate to the project directory:
 
