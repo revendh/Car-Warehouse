@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/your-repo/your-app.git'
+                git branch: 'main', url: 'https://github.com/revendh/Car-Warehouse.git'
             }
         }
         stage('Run SonarQube Analysis') {
