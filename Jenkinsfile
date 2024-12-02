@@ -10,7 +10,7 @@ pipeline {
         // run sonarqube test
         stage('Run Sonarqube') {
             environment {
-                scannerHome = tool 'SonarQubeServer';
+                scannerHome = tool 'SonarQubeScanner';
             }
             steps {
               withSonarQubeEnv(credentialsId: 'sonar_token', installationName: 'lil sonar installation') {
